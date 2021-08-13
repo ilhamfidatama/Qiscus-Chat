@@ -21,6 +21,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "QISCUS_APP_ID", QISCUS_APP_ID
+        }
+        debug{
+            applicationIdSuffix ".debug"
+            debuggable true
+            buildConfigField "String", "QISCUS_APP_ID", QISCUS_APP_ID
         }
     }
     compileOptions {
@@ -42,4 +48,10 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'androidx.browser:browser:1.3.0'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    // Qiscus
+    implementation 'com.qiscus.sdk:chat-core:1.3.32'
 }
